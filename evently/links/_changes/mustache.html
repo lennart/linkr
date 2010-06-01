@@ -1,0 +1,11 @@
+<ul>
+  {{#items}}
+  <li>
+  <a href="{{{url}}}" target="_blank">{{{url}}}</a> by <span class="author">{{nickname}}</span> on <time>{{created_at}}</time>
+  <br/>
+  <span class="message">
+    {{message}}
+  </span>
+  </li>
+  {{/items}}
+</ul>
