@@ -12,7 +12,7 @@ h1 {
 h1 {
   font-family: Georgia;
 }
-h1 em {
+em {
   font-weight: normal;
 }
 
@@ -63,6 +63,8 @@ form {
 }
 
 form label {
+  font-family: "Lucida Grande", sans-serif;
+  font-weight: bold;
   margin-left: 1.5em;
 }
 
