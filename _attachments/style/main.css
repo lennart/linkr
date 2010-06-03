@@ -12,8 +12,12 @@ h1 {
 h1 {
   font-family: Georgia;
 }
-h1 em {
+em {
   font-weight: normal;
+}
+
+time {
+  font-size: 0.8em;
 }
 
 #account {
@@ -42,6 +46,19 @@ h1 em {
   float:left;
 }
 
+#scopes {
+  background: #eef;
+  border: 0.25em solid #aab;
+  padding: 0.5em;
+  margin-bottom: 0px;
+}
+
+#scopes li {
+  position: relative;
+  width: 10em;
+  display: inline-block;
+}
+
 #sidebar {
   border:4px solid #dfd;
   padding:8px;
@@ -63,6 +80,8 @@ form {
 }
 
 form label {
+  font-family: "Lucida Grande", sans-serif;
+  font-weight: bold;
   margin-left: 1.5em;
 }
 
@@ -95,4 +114,8 @@ div.avatar img {
 .message {
   font-family: Georgia, serif;
   margin: 1.5em;
+}
+
+.user {
+  font-weight: bold;
 }
