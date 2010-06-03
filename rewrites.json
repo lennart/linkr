@@ -1,4 +1,20 @@
 [{
-  "from" : "/",
-  "to" : "/index.html"
-  }]
+  "from" : "",
+    "to" : "/index.html"
+},
+{
+  "from" : "script/*",
+  "to" : "script/*"
+},
+{
+  "from" : "style/*",
+  "to" : "style/*"
+},
+{
+  "from" : "vendor/*",
+  "to" : "vendor/*"
+},
+{
+  "from" : "/*",
+  "to" : "../../../:*"
+}]
