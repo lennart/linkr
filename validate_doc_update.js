@@ -13,7 +13,7 @@ function(newDoc, savedDoc, userCtx, secObj) {
       "You may only update documents with author " + userCtx.name);
   }*/
 
- // v.unchanged("nickname");
+ v.unchanged("name");
  // v.unchanged("created_at");
 
   if (newDoc.created_at) v.dateFormat("created_at");
