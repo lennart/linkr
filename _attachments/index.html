@@ -28,6 +28,6 @@
         $("#scopes").evently("scopes", app); 
         $.evently.connect("#account","#scopes", ["loggedIn","loggedOut"]);
         //$.pathbinder.begin("/");
-        });
+        },{design: "linkr", db: "ocean"});
 </script>
 </html>
