@@ -1,1 +1,0 @@
-{  "env" : {    "default" : {      "db" : "http://lmaa:hawk86@localhost/ocean"    },    "test" : {      "db" : "http://lmaa:hawk86@localhost/ocean_test"    }  }}
