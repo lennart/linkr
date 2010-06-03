@@ -1,5 +1,5 @@
 function(doc) {
-  if (doc.url && doc.nickname && doc["created_at"]) {
+  if (doc.url && doc.name && doc["created_at"] && doc.public) {
     emit(doc["created_at"], doc);
   };
 }

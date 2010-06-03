@@ -9,6 +9,7 @@
 
     <h1>help, we need a <em>linkr!</em></h1>
 
+    <ul id="scopes"></ul>
     <div id="profile"></div>
     <div id="links"></div>
 
@@ -16,10 +17,17 @@
   <script src="vendor/couchapp/loader.js"></script>
   <script type="text/javascript" charset="utf-8">
     $.couch.app(function(app) {
-      $("#account").evently("account", app);
-      $("#profile").evently("profile", app);
-      $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
-      $("#links").evently("links", app);
-    });
-  </script>
+        $("#account").evently("account", app);
+        $("#profile").evently("profile", app);
+        $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
+        var links = app.ddoc.evently.links;
+        links.home = $.extend(true, {}, links.recent, links.home);
+        links.replies = $.extend(true, {}, links.recent, links.replies);
+        console.dir(links);
+        $("#links").evently(links, app);
+        $("#scopes").evently("scopes", app); 
+        $.evently.connect("#account","#scopes", ["loggedIn","loggedOut"]);
+        //$.pathbinder.begin("/");
+        });
+</script>
 </html>

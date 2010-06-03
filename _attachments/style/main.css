@@ -16,6 +16,10 @@ em {
   font-weight: normal;
 }
 
+time {
+  font-size: 0.8em;
+}
+
 #account {
   float:right;
   background-color: #efe;
@@ -40,6 +44,19 @@ em {
   padding:8px;
   width:60%;
   float:left;
+}
+
+#scopes {
+  background: #eef;
+  border: 0.25em solid #aab;
+  padding: 0.5em;
+  margin-bottom: 0px;
+}
+
+#scopes li {
+  position: relative;
+  width: 10em;
+  display: inline-block;
 }
 
 #sidebar {
@@ -97,4 +114,8 @@ div.avatar img {
 .message {
   font-family: Georgia, serif;
   margin: 1.5em;
+}
+
+.user {
+  font-weight: bold;
 }
