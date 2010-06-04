@@ -10,8 +10,6 @@ function() {
     message : message
   };
   if(public) { doc.public = true; }
-  console.debug("Document: ");
-  console.dir(doc);
   $$(this).app.db.saveDoc(doc, {
     success : function() {
       $("[name=url]", form).val("");

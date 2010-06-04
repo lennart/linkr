@@ -9,7 +9,6 @@ function(e,p) {
       app.db.removeDoc(doc, {
         success: function() {
           $("li[data-id="+p.id+"]",$("#links")).fadeOut(500);
-          console.debug("delete complete");
         }
       });
     }
