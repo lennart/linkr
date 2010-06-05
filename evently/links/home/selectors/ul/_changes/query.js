@@ -1,7 +1,6 @@
 function() {
   var profile = $$("#profile").profile;
   var query;
-  console.debug("The Query");
   query = {
     limit: 50,
     type: "newRows",

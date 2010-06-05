@@ -4,6 +4,5 @@ function(e, p) {
   if(profile) {
     loggedIn = true;
   }
-  console.debug("I've already spent too much time");
   return { loggedIn : loggedIn }; 
 }
