@@ -1,5 +1,5 @@
 <li class="link" data-id="{{{_id}}}">
-<a href="{{{url}}}" target="_blank">{{{url}}}</a> by <span class="author">{{name}}</span> about <time datetime="{{{created_at}}}">{{{created_at}}}</time> ago.
+<span class="author" data-id="{{profile_name}}">{{name}}</span><a href="{{{url}}}" target="_blank">{{{url}}}</a><time datetime="{{{created_at}}}">{{{created_at}}}</time>
   <br/>
   <span class="message">
     {{message}}
@@ -7,4 +7,5 @@
   {{#author}}
   <a href="#/delete/{{{_id}}}/{{{_rev}}}">Delete</a>
   {{/author}}
+  <div class="clear"></div>
 </li>

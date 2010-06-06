@@ -122,8 +122,13 @@ div.avatar img {
   height : 40px;
 }
 
-#items ul {
+#links ul {
   list-style: none;
+}
+
+#links li .author img {
+  margin: .5em;
+  float: left;
 }
 
 .message {
@@ -133,4 +138,8 @@ div.avatar img {
 
 .user {
   font-weight: bold;
+}
+
+.clear {
+  clear: both;
 }
