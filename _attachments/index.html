@@ -24,6 +24,8 @@
         var links = app.ddoc.evently.links;
         links.home = $.extend(true, {}, links.recent, links.home);
         links.replies = $.extend(true, {}, links.recent, links.replies);
+        links.mentions = $.extend(true, {}, links.recent, links.mentions);
+        links.tags = $.extend(true, {}, links.recent, links.tags);
         $("#links").evently(links, app);
         $("#scopes").evently("scopes", app); 
         $.evently.connect("#account","#scopes", ["loggedIn","loggedOut"]);
