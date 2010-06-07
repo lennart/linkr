@@ -5,7 +5,7 @@ function(doc) {
         words[word.toLowerCase()] = true;
         });
     for (var w in words) {
-      emit([w, doc.created_at], doc);
+      emit([w, doc.created_at], 1);
     }
   }
 }

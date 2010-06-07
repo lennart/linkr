@@ -12,6 +12,10 @@
 
     <ul id="scopes"></ul>
     <div id="profile"></div>
+    <div id="sidebar">
+      <div id="usercloud"></div>
+      <div id="tagcloud"></div>
+    </div>
     <div id="links"></div>
 
   </body>
@@ -28,8 +32,10 @@
         links.tags = $.extend(true, {}, links.recent, links.tags);
         $("#links").evently(links, app);
         $("#scopes").evently("scopes", app); 
+        $("#usercloud").evently("usercloud", app);
+        $("#tagcloud").evently("tagcloud", app);
         $.evently.connect("#account","#scopes", ["loggedIn","loggedOut"]);
         //$.pathbinder.begin("/");
         },{design: "linkr", db: "ocean"});
-</script>
-</html>
+      </script>
+    </html>

@@ -4,6 +4,7 @@ function(e) {
     limit: 50,
     type: "newRows",
     descending: true,
+    include_docs: true,
     view: "mention-links",
     startkey: [params.name, {}],
     endkey: [params.name]

@@ -46,11 +46,10 @@ time {
 }
 
 #profile {
-  z-index: -1;
   border:4px solid #edd;
   background:#fee;
   padding: 0.5em 1em;
-  margin: 0px 1em 0.1em 1em;
+  margin: 0.1em 1em 0.1em 1em;
 }
 
 #items {
@@ -78,7 +77,7 @@ time {
   border:4px solid #dfd;
   padding:8px;
   float:right;
-  width:30%;
+  width: 20%;
 }
 
 #items li {
@@ -122,13 +121,38 @@ div.avatar img {
   height : 40px;
 }
 
+#links {
+  float: left;
+  width: 75%;
+}
+
 #links ul {
   list-style: none;
+  padding: 0em 2em 0em 2em;
+}
+
+#links li {
+  margin: 0.5em;
+}
+
+#links li:hover {
+  background-color: #eee;
+}
+
+#links li .author {
+  float:left;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.8em;
 }
 
 #links li .author img {
   margin: .5em;
-  float: left;
+  display: block;
+}
+
+#links li .meta {
+  float: right;
 }
 
 .message {

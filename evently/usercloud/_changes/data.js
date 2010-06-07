@@ -1,7 +1,4 @@
 function(resp) {
-//  $.couch.userDb(function(db) {
-//      db.
-//      });
   var users = resp.rows.map(function(r) {
     return {
       user : r.key,

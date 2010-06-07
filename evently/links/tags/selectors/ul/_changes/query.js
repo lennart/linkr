@@ -5,6 +5,8 @@ function(e) {
     type: "newRows",
     descending: true,
     view: "tags",
+    reduce: false,
+    include_docs: true,
     startkey: [params.tag, {}],
     endkey: [params.tag]
 

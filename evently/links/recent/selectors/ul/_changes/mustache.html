@@ -1,11 +1,18 @@
 <li class="link" data-id="{{{_id}}}">
-<span class="author" data-id="{{profile_name}}">{{name}}</span><a href="{{{url}}}" target="_blank">{{{url}}}</a><time datetime="{{{created_at}}}">{{{created_at}}}</time>
+<span class="author" data-id="{{profile_name}}">
+  <img src="{{{gravatar_url}}}">
+  {{name}}
+</span>
+<a href="{{{url}}}" target="_blank">{{{url}}}</a>
   <br/>
   <span class="message">
     {{message}}
   </span>
-  {{#author}}
-  <a href="#/delete/{{{_id}}}/{{{_rev}}}">Delete</a>
-  {{/author}}
+  <span class="meta">
+    <time datetime="{{{created_at}}}">{{{created_at}}}</time>
+    {{#author}}
+    <a href="#/delete/{{{_id}}}/{{{_rev}}}">Delete</a>
+    {{/author}}
+  </span>
   <div class="clear"></div>
 </li>
