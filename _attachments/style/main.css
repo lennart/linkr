@@ -5,6 +5,10 @@ body {
   padding:4px;
 }
 
+.loading {
+  background-color: red;
+  color: white;
+}
 a {
   font-family: "Lucida Grande", sans-serif;
   font-weight: bold;

@@ -11,6 +11,7 @@
     <h1>help, we need a <em>linkr!</em><sup class="note">(and a designer too…)</sup></h1>
 
     <ul id="scopes"></ul>
+    <div id="users"></div>
     <div id="profile"></div>
     <div id="sidebar">
       <div id="usercloud"></div>
@@ -30,12 +31,34 @@
         links.replies = $.extend(true, {}, links.recent, links.replies);
         links.mentions = $.extend(true, {}, links.recent, links.mentions);
         links.tags = $.extend(true, {}, links.recent, links.tags);
+        links.domains = $.extend(true, {}, links.recent, links.domains);
         $("#links").evently(links, app);
         $("#scopes").evently("scopes", app); 
         $("#usercloud").evently("usercloud", app);
         $("#tagcloud").evently("tagcloud", app);
+        //$("home", function(e, params) {});
+
         $.evently.connect("#account","#scopes", ["loggedIn","loggedOut"]);
         //$.pathbinder.begin("/");
-        },{design: "linkr", db: "ocean"});
-      </script>
+        //},{design: "linkr", db: "ocean"});
+
+        $.couch.userDb(function(db) {
+            db.allDocs({
+              startkey : "org.couchdb.user:",
+              endkey : "org.couchdb.user:\ufff0",
+              include_docs : true,
+              success: function(resp) {
+              $$("#users").profiles = {};
+              $.each(resp.rows, function(i, row) {
+                  var profile = row.doc["couch.app.profile"];
+                  if(profile) {
+                  $$("#users").profiles[row.doc.name] = {};
+                  $$("#users").profiles[row.doc.name].gravatar_url = profile.gravatar_url;
+                  }
+                });
+              }
+            });
+        });
+    });
+</script>
     </html>

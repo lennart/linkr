@@ -2,7 +2,7 @@ function(data) {
   var app = $$("#links").app, 
       profile = $$("#profile").profile, stash = data.doc;
   stash.profile_name = stash.name;
-  user = $$("a[data-id="+stash.profile_name+"]",$("#usercloud"));
+  user = $$("#users").profiles[stash.profile_name];
   stash.gravatar_url = user.gravatar_url;
   if(profile && (stash.name == profile.name)) {
     stash.author = true;
