@@ -40,7 +40,6 @@
 
         $.evently.connect("#account","#scopes", ["loggedIn","loggedOut"]);
         //$.pathbinder.begin("/");
-        //},{design: "linkr", db: "ocean"});
 
         $.couch.userDb(function(db) {
             db.allDocs({
@@ -59,6 +58,6 @@
               }
             });
         });
-    });
+        },{design: "linkr", db: "ocean"});
 </script>
     </html>
