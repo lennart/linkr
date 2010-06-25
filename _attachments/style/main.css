@@ -64,6 +64,11 @@ time {
   float:left;
 }
 
+#domaincloud, #tagcloud {
+  text-align: justify;
+  text-justify: newspaper;
+}
+
 #scopes {
   background: #eef;
   border: 0.25em solid #cce;
@@ -91,7 +96,12 @@ time {
   margin:4px 0;
 }
 
+#profile form {
+  margin-left: 80px;
+}
+
 form {
+  position: relative;
   padding:0.25em;
   margin:0.5em;
   background-color:#eee;  
@@ -157,6 +167,19 @@ div.avatar img {
 
 #links li .meta {
   float: right;
+}
+
+#links li .spinner {
+  position: relative;
+  left: 50%;
+  margin-left: -12px;
+}
+
+.spinner {
+  position: absolute;
+  right: 5px;
+  width: 24px;
+  height: 24px;
 }
 
 .message {

@@ -3,7 +3,11 @@ function(data) {
       profile = $$("#profile").profile, stash = data.doc;
   stash.profile_name = stash.name;
   user = $$("#users").profiles[stash.profile_name];
-  stash.gravatar_url = user.gravatar_url;
+  if(user === undefined) {
+  }
+  else {
+    stash.gravatar_url = user.gravatar_url
+  }
   if(profile && (stash.name == profile.name)) {
     stash.author = true;
     stash.name = "you";

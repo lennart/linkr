@@ -1,8 +1,8 @@
 
 function couchapp_load(scripts) {
-  document.write(scripts.map(function(s) {
-    return '<script src="'+s+'"></script>';
-  }).join(''));  
+  for (var i=0; i < scripts.length; i++) {
+    document.write('<script src="'+scripts[i]+'"><\/script>')
+  };
 };
 
 couchapp_load([
@@ -13,6 +13,5 @@ couchapp_load([
   "vendor/couchapp/jquery.couch.app.js",
   "vendor/couchapp/jquery.couch.app.util.js",
   "vendor/couchapp/jquery.mustache.js",
-  "vendor/couchapp/jquery.evently.js",
-  "vendor/couchapp/jquery.pathbinder.js"
+  "vendor/couchapp/jquery.evently.js"
 ]);

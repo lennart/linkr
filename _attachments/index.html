@@ -14,7 +14,7 @@
     <div id="users"></div>
     <div id="profile"></div>
     <div id="sidebar">
-      <div id="usercloud"></div>
+      <div id="domaincloud"></div>
       <div id="tagcloud"></div>
     </div>
     <div id="links"></div>
@@ -22,32 +22,17 @@
   </body>
   <script src="vendor/couchapp/loader.js"></script>
   <script type="text/javascript" charset="utf-8">
+    couchapp_load([
+    "vendor/couchapp/jquery.pathbinder.js"
+    ]);
     $.couch.app(function(app) {
-        $("#account").evently("account", app);
-        $("#profile").evently("profile", app);
-        $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
-        var links = app.ddoc.evently.links;
-        links.home = $.extend(true, {}, links.recent, links.home);
-        links.replies = $.extend(true, {}, links.recent, links.replies);
-        links.mentions = $.extend(true, {}, links.recent, links.mentions);
-        links.tags = $.extend(true, {}, links.recent, links.tags);
-        links.domains = $.extend(true, {}, links.recent, links.domains);
-        $("#links").evently(links, app);
-        $("#scopes").evently("scopes", app); 
-        $("#usercloud").evently("usercloud", app);
-        $("#tagcloud").evently("tagcloud", app);
-        //$("home", function(e, params) {});
-
-        $.evently.connect("#account","#scopes", ["loggedIn","loggedOut"]);
-        //$.pathbinder.begin("/");
-
+        $$("#users").profiles = {};
         $.couch.userDb(function(db) {
             db.allDocs({
               startkey : "org.couchdb.user:",
               endkey : "org.couchdb.user:\ufff0",
               include_docs : true,
               success: function(resp) {
-              $$("#users").profiles = {};
               $.each(resp.rows, function(i, row) {
                   var profile = row.doc["couch.app.profile"];
                   if(profile) {
@@ -55,9 +40,28 @@
                   $$("#users").profiles[row.doc.name].gravatar_url = profile.gravatar_url;
                   }
                 });
+
+                $("#account").evently("account", app);
+                $("#profile").evently("profile", app);
+                $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
+                var links = app.ddoc.evently.links;
+                links.home = $.extend(true, {}, links.recent, links.home);
+                links.replies = $.extend(true, {}, links.recent, links.replies);
+                links.mentions = $.extend(true, {}, links.recent, links.mentions);
+                links.tags = $.extend(true, {}, links.recent, links.tags);
+                links.domains = $.extend(true, {}, links.recent, links.domains);
+                $("#links").evently(links, app);
+                $("#scopes").evently("scopes", app); 
+                $("#domaincloud").evently("domaincloud", app);
+                $("#tagcloud").evently("tagcloud", app);
+                //$("home", function(e, params) {});
+
+                $.evently.connect("#account","#scopes", ["loggedIn","loggedOut"]);
+                //$.pathbinder.begin("/");
               }
             });
         });
+
         },{design: "linkr", db: "ocean"});
 </script>
     </html>
