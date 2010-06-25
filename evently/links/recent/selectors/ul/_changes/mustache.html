@@ -12,6 +12,9 @@
     <time datetime="{{{created_at}}}">{{{created_at}}}</time>
     {{#author}}
     <a href="#/delete/{{{_id}}}/{{{_rev}}}">Delete</a>
+    <a href="#" data-id="{{{_id}}}" name="togglePublic">
+      {{togglePublic}}
+    </a>
     {{/author}}
   </span>
   <div class="clear"></div>

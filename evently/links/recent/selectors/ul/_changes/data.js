@@ -15,5 +15,12 @@ function(data) {
   else {
 
   }
+  if(stash.public) {
+    stash.togglePublic = "Unpublish"
+  }
+  else {
+    stash.togglePublic = "Publish"
+  }
+
   return stash;
 };
