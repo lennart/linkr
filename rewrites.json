@@ -15,6 +15,10 @@
   "to" : "vendor/*"
 },
 {
+  "from" : "feed.atom",
+  "to" : "_list/atom/by-date-and-domain"
+},
+{
   "from" : "/*",
   "to" : "../../../:*"
 }]
