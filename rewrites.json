@@ -19,6 +19,10 @@
   "to" : "_list/atom/by-date-and-domain"
 },
 {
+  "from" : "images/*",
+  "to" : "images/*"
+},
+{
   "from" : "/*",
   "to" : "../../../:*"
 }]
