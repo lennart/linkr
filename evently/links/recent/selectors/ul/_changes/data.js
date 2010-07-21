@@ -30,6 +30,10 @@ function(data) {
   if($$("#profile").unseen.indexOf(stash["_id"]) != -1) {
       stash.unseen = true;
   }
-
+  else {
+    console.log("Lalalalala");
+  console.log($$("#profile").unseen);
+  console.log(stash["_id"]);
+  }
   return stash;
 };

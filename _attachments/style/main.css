@@ -1,4 +1,7 @@
 /* add styles here */
+html {
+  font-size: 13px;
+}
 
 body {
   font:1em Helvetica, sans-serif;
@@ -103,8 +106,8 @@ time {
 }
 
 #scopes {
-  background: #eef;
-  border: 0.25em solid #cce;
+  background: #efefef;
+  border: 0.25em solid #cfcfcf;
   border-top-left-radius: 15px;
   -moz-border-radius-topleft: 15px;
   -webkit-border-top-left-radius: 15px;
@@ -119,7 +122,7 @@ time {
 }
 
 #sidebar {
-  background-color: #ddd;
+  background-color: #dfdfdf;
   margin-top: 1.5em;
   margin-left: -250px;
   padding:8px;
@@ -192,6 +195,10 @@ div.avatar img {
   position: relative;
   border: 0px dotted #ffcc00;
   overflow: hidden;
+  background-color: #f7f7f7;
+  border-bottom-left-radius: 15px;
+  -moz-border-radius-bottomleft: 15px;
+  -webkit-border-bottom-left-radius: 15px;
 }
 
 #links ul {
@@ -204,6 +211,10 @@ div.avatar img {
   position: relative;
   border: 0px dotted #ffcc00;
   overflow: hidden;
+  background-color: #f7f7f7;
+  border-bottom-left-radius: 15px;
+  -moz-border-radius-bottomleft: 15px;
+  -webkit-border-bottom-left-radius: 15px;
 }
 
 #links > form {
@@ -240,7 +251,7 @@ div.avatar img {
   text-decoration: none;
   position: absolute;
   left: -150px;
-  top: -25px;
+  top: 25px;
   opacity: 0.3;
   z-index: 0;
 }

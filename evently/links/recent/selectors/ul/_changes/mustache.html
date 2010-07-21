@@ -1,4 +1,4 @@
-<li class="link {{#unseen}}unseen{{/unseen}}" data-id="{{{_id}}}">
+<li class="link" data-id="{{{_id}}}">
   <a href="{{{url}}}" target="_blank" class="url">
     {{#image}}
     <img src="{{{url}}}" />
@@ -32,19 +32,19 @@
     </a>
     </li>
     {{/author}}
-    {{#unseen}}
+    <!--{{#unseen}}
     <li>
     <a href="#" data-id="{{{_id}}}" name="markRead">
       Mark as read
     </a>
     </li>
-    {{/unseen}}
-    <li>
+    {{/unseen}}-->
+   <!-- <li>
     <a href="#" data-id="{{{_id}}}" name="voteUp" title="Vote Up"><img src="images/voteup.png"></a>
     </li>
     <li>
     <a href="#" data-id="{{{_id}}}" name="voteDown" title="Vote Down"><img src="images/votedown.png"></a>
-    </li>
+    </li>-->
     <li>
     {{^glueCount}}
     <a href="#/glued/{{{_id}}}"><img src="images/replies.png"></a>
