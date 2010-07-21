@@ -2,6 +2,7 @@ function(data) {
   var app = $$("#links").app, 
       profile = $$("#profile").profile, stash = data.doc;
   stash.profile_name = stash.name;
+  stash.rating = data.key;
   user = $$("#users").profiles[stash.profile_name];
   if(user === undefined) {
   }
@@ -16,10 +17,18 @@ function(data) {
 
   }
   if(stash.public) {
-    stash.togglePublic = "Unpublish"
+    stash.togglePublic = "published"
   }
   else {
-    stash.togglePublic = "Publish"
+    stash.togglePublic = "unpublished"
+  }
+  var imgRxp = new RegExp(/\.(jpg|jpeg|gif|png)$/);
+  if(imgRxp.exec(stash.url.toLowerCase())) {
+    stash.image = true;
+  }
+
+  if($$("#profile").unseen.indexOf(stash["_id"]) != -1) {
+      stash.unseen = true;
   }
 
   return stash;

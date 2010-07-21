@@ -1,0 +1,70 @@
+<div class="link">
+  <a href="{{{url}}}" class="url" target="_blank">
+    {{#image}}
+    <img src="{{{url}}}" width="250"/>
+    {{/image}}
+    {{^image}}
+    {{{url}}}
+    {{/image}}
+  </a>
+  <div class="message">
+    {{message}}
+  </div>
+  <div class="meta">
+    <div class="time">
+      <time datetime="{{{created_at}}}">{{{created_at}}}</time>
+    </div>
+    <span class="user">
+      <span class="author" data-id="{{profile_name}}">
+        {{#gravatar_url}}<img src="{{{gravatar_url}}}">{{/gravatar_url}}
+        {{name}}
+      </span>
+    </span>
+    <ol>
+      {{#author}}
+      <li>
+      <a href="#/delete/{{{_id}}}/{{{_rev}}}" title="Delete"><img src="images/delete.png"></a>
+      </li>
+      <li>
+      <a href="#" data-id="{{{_id}}}" name="togglePublic">
+        <img src="images/{{togglePublic}}.png">
+      </a>
+      </li>
+      {{/author}}
+      {{#unseen}}
+      <li>
+      <a href="#" data-id="{{{_id}}}" name="markRead">
+        Mark as read
+      </a>
+      </li>
+      {{/unseen}}
+      <li>
+      <a href="#" data-id="{{{_id}}}" name="voteUp" title="Vote Up"><img src="images/voteup.png"></a>
+      </li>
+      <li>
+      <a href="#" data-id="{{{_id}}}" name="voteDown" title="Vote Down"><img src="images/votedown.png"></a>
+      </li>
+    </ol>
+  </div>
+  <div class="clear"></div>
+</div>
+<form>
+  <input type="hidden" name="gluedTo" value="{{{_id}}}">
+  <fieldset>
+    <legend>
+      Glue something to this link-thing!
+    </legend>
+    <label>
+      URL:
+    </label>
+    <input name="url" type="text" size="50">
+    <label>
+      Message:
+    </label>
+    <input name="message" type="text" size="50">
+    <br/>
+    <input type="submit" value="Glue it!">
+  </fieldset>
+</form>
+<ul class="links glued">
+</ul>

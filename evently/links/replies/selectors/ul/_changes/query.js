@@ -4,7 +4,8 @@ function() {
   query = {
     limit: 50,
     type: "newRows",
-    descending: true
+    descending: true,
+    include_docs: true
   }
   if(profile) {
     query.view = "mention-links",

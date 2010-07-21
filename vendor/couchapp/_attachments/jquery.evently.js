@@ -31,7 +31,7 @@ function $$(node) {
             return f.apply(this, arguments);
           } catch(e) {
             // IF YOU SEE AN ERROR HERE IT HAPPENED WHEN WE TRIED TO RUN YOUR FUNCTION
-            // $.log({"message": "Error in evently function.", "error": e, "src" : fun});
+            $.log({"message": "Error in evently function.", "error": e, "src" : fun});
             throw(e);
           }
         };
@@ -108,7 +108,7 @@ function $$(node) {
     }
     
     if (app && events._changes) {
-      $("body").bind("evently.changes."+app.db.name, function() {
+      $("body").bind("evently-changes-"+app.db.name, function() {
         // we want to unbind this function when the element is deleted.
         // maybe jquery 1.4.2 has this covered?
         // $.log('changes', elem);
@@ -318,7 +318,7 @@ function $$(node) {
   // only start one changes listener per db
   function followChanges(app) {
     var dbName = app.db.name, changeEvent = function(resp) {
-      $("body").trigger("evently.changes."+dbName, [resp]);
+      $("body").trigger("evently-changes-"+dbName, [resp]);
     };
     if (!$.evently.changesDBs[dbName]) {
       if (app.db.changes) {

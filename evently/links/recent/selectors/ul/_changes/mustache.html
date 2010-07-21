@@ -1,21 +1,59 @@
-<li class="link" data-id="{{{_id}}}">
-<span class="author" data-id="{{profile_name}}">
-  {{#gravatar_url}}<img src="{{{gravatar_url}}}">{{/gravatar_url}}
-  {{name}}
-</span>
-<a href="{{{url}}}" target="_blank">{{{url}}}</a>
-  <br/>
-  <span class="message">
-    {{message}}
-  </span>
-  <span class="meta">
+<li class="link {{#unseen}}unseen{{/unseen}}" data-id="{{{_id}}}">
+  <a href="{{{url}}}" target="_blank" class="url">
+    {{#image}}
+    <img src="{{{url}}}" />
+    {{/image}}
+    {{^image}}
+    {{{url}}}
+    {{/image}}
+  </a>
+<div class="message">
+  {{message}}
+</div>
+<div class="meta">
+  <div class="time">
     <time datetime="{{{created_at}}}">{{{created_at}}}</time>
-    {{#author}}
-    <a href="#/delete/{{{_id}}}/{{{_rev}}}">Delete</a>
-    <a href="#" data-id="{{{_id}}}" name="togglePublic">
-      {{togglePublic}}
-    </a>
-    {{/author}}
+  </div>
+  <span class="user">
+    <span class="author" data-id="{{profile_name}}">
+      {{#gravatar_url}}<img src="{{{gravatar_url}}}">{{/gravatar_url}}
+      {{name}}
+    </span>
+    <span class="clear">&nbsp;</span>
   </span>
-  <div class="clear"></div>
+  <ol>
+    {{#author}}
+    <li>
+    <a href="#/delete/{{{_id}}}/{{{_rev}}}" title="Delete"><img src="images/delete.png"></a>
+    </li>
+    <li>
+    <a href="#" data-id="{{{_id}}}" name="togglePublic">
+      <img src="images/{{togglePublic}}.png">
+    </a>
+    </li>
+    {{/author}}
+    {{#unseen}}
+    <li>
+    <a href="#" data-id="{{{_id}}}" name="markRead">
+      Mark as read
+    </a>
+    </li>
+    {{/unseen}}
+    <li>
+    <a href="#" data-id="{{{_id}}}" name="voteUp" title="Vote Up"><img src="images/voteup.png"></a>
+    </li>
+    <li>
+    <a href="#" data-id="{{{_id}}}" name="voteDown" title="Vote Down"><img src="images/votedown.png"></a>
+    </li>
+    <li>
+    {{^glueCount}}
+    <a href="#/glued/{{{_id}}}"><img src="images/replies.png"></a>
+    {{/glueCount}}
+    {{#glueCount}}
+    <a href="#/glued/{{{_id}}}">{{glueCount}} <img src="images/replies.png"></a>
+    {{/glueCount}}
+    </li>
+  </ol>
+</div>
+<div class="clear"></div>
 </li>

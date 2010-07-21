@@ -9,7 +9,7 @@ function(e,p) {
             console.log("Yay, done");
             console.log(doc);
             if(doc.public) {
-              $(e.target).html("Unpublish");
+              $(e.target).html("<img src='images/published.png'>");
             }
             else {
               $(e.target).parents("li").fadeOut(500);

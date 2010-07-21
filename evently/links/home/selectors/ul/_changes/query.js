@@ -10,7 +10,7 @@ function() {
   }
   if(profile) {
     query.view = "private-links",
-    query.startkey = [profile.name, {}],
+    query.startkey = [profile.name, {}];
     query.endkey = [profile.name];
   }
   else {

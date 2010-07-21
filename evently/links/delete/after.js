@@ -9,7 +9,21 @@ function(e,p) {
       }
       app.db.removeDoc(doc, {
         success: function() {
-          $("li[data-id="+p.id+"]",$("#links")).fadeOut(500);
+          if(doc.gluedTo) {
+            app.db.openDoc(doc.gluedTo, {
+              success : function(glueDoc) {
+              glueDoc.glueCount = glueDoc.glueCount - 1;
+              app.db.saveDoc(glueDoc, {
+                success : function() {
+                  $("li[data-id="+p.id+"]",$("#links")).fadeOut(500);
+                }
+                });
+              }
+              });
+          }
+          else {
+            $("li[data-id="+p.id+"]",$("#links")).fadeOut(500);
+          }
         }
       }
 

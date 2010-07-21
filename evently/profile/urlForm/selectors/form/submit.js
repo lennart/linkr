@@ -1,5 +1,6 @@
 function() {
   var form = this;
+  var widget = $(this);
   var url = $("[name=url]", form).val();
   var message = $("[name=message]", form).val()
   var public = $("input[name=public]", form).is(':checked');
@@ -16,6 +17,10 @@ function() {
     success : function() {
       $("[name=url]", form).val("");
       $("[name=message]", form).val("");
+      if(!doc.public && ($.pathbinder.currentPath() == "/")) {
+        $.pathbinder.go("/home");
+      }
+      $("#profile").trigger("profileReady");
       }
   });
   return false;
