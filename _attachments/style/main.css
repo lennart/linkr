@@ -70,11 +70,11 @@ time {
 
 #account {
   float:right;
-  background-color: #efe;
+  background-color: #eee;
   border-top-right-radius: 15px;
   -moz-border-radius-topright: 15px;
   -webkit-border-top-right-radius: 15px;
-  border: 0.25em solid #ded;
+  border: 0.25em solid #ddd;
   padding: 0.75em;
   line-height: 2em;
 }
@@ -85,8 +85,8 @@ time {
 }
 
 #profile {
-  border:4px solid #edd;
-  background:#fee;
+  border:4px solid #ccc;
+  background:#ddd;
   padding: 0.5em 1em;
   margin: 0.1em 0em 0.1em 0em;
   border-bottom-right-radius: 15px;
@@ -119,7 +119,7 @@ time {
 }
 
 #sidebar {
-  background-color: #dfd;
+  background-color: #ddd;
   margin-top: 1.5em;
   margin-left: -250px;
   padding:8px;
