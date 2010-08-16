@@ -276,6 +276,7 @@ div.avatar img {
   top: -2px;
   left: -2px;
   height: 25px;
+  margin-bottom: 0.75em;
   border-bottom-right-radius: 15px;
   -moz-border-radius-bottomright: 15px;
   -webkit-border-bottom-right-radius: 15px;
@@ -295,6 +296,14 @@ div.avatar img {
   display: inline-block;
 }
 
+
+#links .link .meta .rating {
+  font-size: 2em;
+  font-family: Georgia;
+  position: relative;
+  bottom: 0.5em;
+  margin: 1em;
+}
 
 #links .link .meta ol {
   padding: 0.25em;
@@ -346,6 +355,11 @@ div.avatar img {
   font-weight: bold;
 }
 
+.tab {
+  overflow: hidden;
+}
+
 .clear {
   clear: both;
 }
+

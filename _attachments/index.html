@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>linkr</title>
     <link rel="stylesheet" href="style/main.css" type="text/css">
+    <link rel="stylesheet" href="style/jquery-ui-1.8.4.custom.css" type="text/css">
     <link rel="alternate" type="application/atom+xml" 
       title="Atom Feed" href="/feed.atom"/>
 
@@ -23,8 +24,9 @@
       </div>
       <div id="contentwrapper">
         <div id="sidebar">
-          <div id="domaincloud"></div>
-          <div id="tagcloud"></div>
+          <div id="cloudcontrol"></div>
+          <div id="tabs-1" class="tab"></div>
+          <div id="tabs-2" class="tab"></div>
         </div>
         <div id="links"></div>
       </div>
@@ -34,7 +36,8 @@
   <script src="vendor/couchapp/loader.js"></script>
   <script type="text/javascript" charset="utf-8">
     couchapp_load([
-    "vendor/couchapp/jquery.pathbinder.js"
+        "vendor/couchapp/jquery.pathbinder.js",
+        "script/jquery-ui-1.8.4.custom.min.js"
     ]);
     $.couch.app(function(app) {
         $$("#users").profiles = {};
@@ -54,7 +57,11 @@
                 });
 
                 $("#account").evently("account", app);
-                $("#profile").evently("profile", app);
+                var profile = app.ddoc.evently.profile;
+                profile.pushForm = $.extend(true, {}, profile.urlForm, profile.pushForm);
+                profile.pullForm = $.extend(true, {}, profile.urlForm, profile.pullForm);
+
+                $("#profile").evently(profile, app);
                 $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
                 var links = app.ddoc.evently.links;
                 links.home = $.extend(true, {}, links.recent, links.home);
@@ -65,11 +72,11 @@
                 links.glued = $.extend(true, {}, links.recent, links.glued);
                 $("#links").evently(links, app);
                 $("#scopes").evently("scopes", app); 
-                $("#domaincloud").evently("domaincloud", app);
-                $("#tagcloud").evently("tagcloud", app);
-                //$("home", function(e, params) {});
+                $("#cloudcontrol").evently("cloudcontrol", app);
+                $("#sidebar").tabs({ fx : { opacity: 'toggle' }, duration : 'fast'});
+                $("#tabs-1").evently("tagcloud", app);
+                $("#tabs-2").evently("domaincloud", app);
                 $.evently.connect("#profile","#scopes", ["profileReady","loggedOut"]);
-                console.log($.pathbinder.currentPath());
                 $.pathbinder.begin("/");
               }
             });
