@@ -23,7 +23,7 @@ function() {
             }
             glueDoc.glueCount = glueDoc.glueCount + 1;
             app.db.saveDoc(glueDoc, {
-              success : function(resp) {
+              success : function(glueResp) {
                 console.log("Saved Glue Doc");
                 $("[name=url]", form).val("");
                 $("[name=message]", form).val("");

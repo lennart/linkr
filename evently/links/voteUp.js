@@ -8,7 +8,11 @@ function(e,p) {
       var userRating = doc.ratings[profile.name];
       if(userRating != 1) {
         userRating = 1;
-        doc.ratings[profile.name] = userRating;
+        doc.ratings[profile.name] = {
+          rating: userRating,
+          name: profile.name,
+          date: new Date()
+        }
         app.db.saveDoc(doc, {
             success: function(resp) {
               console.log("Yay, voted up");

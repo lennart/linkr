@@ -1,9 +1,16 @@
-function(data) {
+function(data,p) {
   var app = $$("#links").app, 
       profile = $$("#profile").profile, stash = data.doc;
   stash.profile_name = stash.name;
-  stash.rating = data.key;
   user = $$("#users").profiles[stash.profile_name];
+  var ratings = [];
+  if(stash.ratings) {
+    $.each(stash.ratings, function(name, object) {
+        ratings.push(object);
+        });
+  }
+  stash.ratings = ratings;
+  stash.rating = data.key;
   if(user === undefined) {
   }
   else {
@@ -31,9 +38,6 @@ function(data) {
       stash.unseen = true;
   }
   else {
-    console.log("Lalalalala");
-  console.log($$("#profile").unseen);
-  console.log(stash["_id"]);
   }
   return stash;
 };

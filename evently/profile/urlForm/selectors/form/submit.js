@@ -2,6 +2,9 @@ function() {
   var form = this;
   var widget = $(this);
   var url = $("[name=url]", form).val();
+  var push = $("[name=push]", form).val();
+  var pull = $("[name=pull]", form).val();
+  
   var message = $("[name=message]", form).val()
   var public = $("input[name=public]", form).is(':checked');
 
@@ -12,6 +15,12 @@ function() {
     url : url,
     message : message
   };
+  if(push !== undefined) {
+    doc.pushes = push;
+  }
+  else if (pull !== undefined) {
+   // doc.pull 
+  }
   if(public) { doc.public = true; }
   $$(this).app.db.saveDoc(doc, {
     success : function() {

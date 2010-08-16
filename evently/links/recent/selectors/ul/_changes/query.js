@@ -3,9 +3,8 @@ function() {
     limit: 50,
     type: "newRows",
     descending: true,
-    reduce: false,
     include_docs: true,
-    view: "recent-links"
+    view: "by-rating"
   }
   return query;
 }

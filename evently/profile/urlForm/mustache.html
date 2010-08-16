@@ -6,9 +6,15 @@
 </div>
 
 <form>
-  <label>URL(*):</label> <input type="text" name="url" size="40" value="">
+  {{#push}}
+    <input type="hidden" name="push" value="push">
+  {{/push}}
+  {{#pull}}
+    <input type="hidden" name="pull" value="pull">
+  {{/pull}}
+  <label>URL(*):</label> <input type="text" name="url" size="40" value="{{share_url}}" {{#share_url}}disabled="disabled"{{/share_url}}>
   <br/>
-  <label>Message:</label><input type="text" name="message" size="40" value="">
+  <label>Message:</label><textarea name="message" rows="10" cols="50"></textarea>
   <br/>
   <input type="submit" value="Share!">
   <label><input type="checkbox" name="public"> Public</label>

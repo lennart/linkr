@@ -10,6 +10,13 @@
 <div class="message">
   {{message}}
 </div>
+<!--  <ul class="rating" style="display:none;">
+    {{#ratings}}
+    <li>
+    {{rating}} by {{name}} on {{date}}
+    </li>
+    {{/ratings}}
+  </ul>-->
 <div class="meta">
   <div class="time">
     <time datetime="{{{created_at}}}">{{{created_at}}}</time>
@@ -39,12 +46,12 @@
     </a>
     </li>
     {{/unseen}}-->
-   <!-- <li>
-    <a href="#" data-id="{{{_id}}}" name="voteUp" title="Vote Up"><img src="images/voteup.png"></a>
+    <li>
+    <a href="#/push/{{{_id}}}" title="Vote Up"><img src="images/voteup.png"></a>
     </li>
     <li>
-    <a href="#" data-id="{{{_id}}}" name="voteDown" title="Vote Down"><img src="images/votedown.png"></a>
-    </li>-->
+    <a href="#/pull/{{{_id}}}" title="Vote Down"><img src="images/votedown.png"></a>
+    </li>
     <li>
     {{^glueCount}}
     <a href="#/glued/{{{_id}}}"><img src="images/replies.png"></a>
@@ -54,6 +61,9 @@
     {{/glueCount}}
     </li>
   </ol>
+  <!--<span class="rating">
+    {{rating}}
+  </span>-->
 </div>
 <div class="clear"></div>
 </li>
