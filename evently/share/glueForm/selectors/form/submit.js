@@ -4,10 +4,11 @@ function() {
   var app = $$(this).app;
   var url = $("[name=url]", form).val();
   if(/^(http|https|ftp):\/\/(([A-Z0-9][A-Z0-9_-]*)(\.[A-Z0-9][A-Z0-9_-]*)+)(:(\d+))?\/?/i.test(url)) {
+    var submit = $("[type=submit]", form).attr("disabled","disabled");
     var message = $("[name=message]", form).val();
     var gluedTo = $("[name=gluedTo]", form).val();
     console.log("Glueing to "+gluedTo);
-    $("form",$("#profile")).append("<img src='images/spinner.gif' class='spinner' />");
+    widget.parent().prepend("<img src='images/spinner.gif' class='spinner' />");
     var doc = {
       created_at : new Date(),
       name : $$("#profile").profile.name,
@@ -30,6 +31,7 @@ function() {
                   console.log("Saved Glue Doc");
                   $("[name=url]", form).val("");
                   $("[name=message]", form).val("");
+                  $(".spinner",widget.parent()).hide();
                   widget.parent().dialog("close");
                 }
               });
