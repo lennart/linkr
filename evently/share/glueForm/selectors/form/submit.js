@@ -1,10 +1,12 @@
 function() {
+  var widget = $(this);
   var form = this;
   var app = $$(this).app;
   var url = $("[name=url]", form).val();
   if(/^(http|https|ftp):\/\/(([A-Z0-9][A-Z0-9_-]*)(\.[A-Z0-9][A-Z0-9_-]*)+)(:(\d+))?\/?/i.test(url)) {
     var message = $("[name=message]", form).val();
     var gluedTo = $("[name=gluedTo]", form).val();
+    console.log("Glueing to "+gluedTo);
     $("form",$("#profile")).append("<img src='images/spinner.gif' class='spinner' />");
     var doc = {
       created_at : new Date(),
@@ -28,8 +30,9 @@ function() {
                   console.log("Saved Glue Doc");
                   $("[name=url]", form).val("");
                   $("[name=message]", form).val("");
+                  widget.parent().dialog("close");
                 }
-                });
+              });
             }
           });
         }
@@ -40,3 +43,4 @@ function() {
   }
   return false;
 };
+

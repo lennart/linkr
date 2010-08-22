@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <script src="http://localhost:5984/_utils/script/sha1.js"></script>
+    <script src="http://localhost:5984/_utils/script/json2.js"></script>
+    <script src="http://localhost:5984/_utils/script/jquery.js"></script>
+    <script src="http://localhost:5984/_utils/script/jquery.couch.js"></script>
+  </head>
+
+  <body>
+    <textarea id="random">
+    </textarea>
+    <a href="#" id"clickme">click</a>
+    <script type="text/javascript">
+
+     javascript:var scr= document.createElement("script");
+      scr.src = "http://localhost:5984/_utils/script/sha1.js";
+      document.body.appendChild(scr);
+      scr= document.createElement("script");
+      scr.src = "http://localhost:5984/_utils/script/json2.js";
+      document.body.appendChild(scr);
+      scr= document.createElement("script");
+      scr.src = "http://localhost:5984/_utils/script/jquery.js";
+      document.body.appendChild(scr);
+      scr= document.createElement("script");
+      scr.src = "http://localhost:5984/_utils/script/jquery.couch.js";
+      document.body.appendChild(scr);
+      scr = document.createElement("script");
+      scr.innerHTML = "function postToLinkr() { var a=document.getElementById('linkrMessage').value;location.href='http://linkr.aludose/a?url='+encodeURIComponent(location.href)+'&message='+encodeURIComponent(a);return false;};";
+      document.body.appendChild(scr);
+      var css = document.createElement("style");
+
+      css.innerHTML = "#linkrDiv { position: absolute; top: 15px; right: 15px;}";
+      document.body.appendChild(css);
+      var d = document.createElement("div");
+      d.id = "linkrDiv";
+      var f = document.createElement("form");
+      f.id = "linkr";
+      f.action = "javascript:postToLinkr()";
+      var label = document.createElement("label");
+      label.innerHTML = "Message:";
+      f.appendChild(label);
+      var msgbox = document.createElement("input");
+      msgbox.type  ="text";
+      msgbox.id = "linkrMessage";
+      f.appendChild(msgbox);
+      var sub = document.createElement("input");
+      sub.type ="submit";
+      sub.value = "Share!";
+      f.appendChild(sub);
+      d.appendChild(f);
+      document.body.appendChild(d);
+    </script>
+  </body>
+</html>

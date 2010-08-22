@@ -3,6 +3,14 @@
     "to" : "/index.html"
 },
 {
+  "from" : "b",
+  "to" : "bookmarklet.html"
+},
+{
+  "from" : "a",
+  "to" : "_update/add"
+},
+{
   "from" : "script/*",
   "to" : "script/*"
 },

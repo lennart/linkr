@@ -60,23 +60,28 @@
                 var profile = app.ddoc.evently.profile;
                 profile.pushForm = $.extend(true, {}, profile.urlForm, profile.pushForm);
                 profile.pullForm = $.extend(true, {}, profile.urlForm, profile.pullForm);
+                profile.glued = $.extend(true, {}, profile.timeline, profile.glued);
 
                 $("#profile").evently(profile, app);
-                $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
+                $.evently.connect("#account","#profile", ["loggedOut","loggedIn"]);
                 var links = app.ddoc.evently.links;
-                links.home = $.extend(true, {}, links.recent, links.home);
-                links.replies = $.extend(true, {}, links.recent, links.replies);
-                links.mentions = $.extend(true, {}, links.recent, links.mentions);
-                links.tags = $.extend(true, {}, links.recent, links.tags);
-                links.domains = $.extend(true, {}, links.recent, links.domains);
-                links.glued = $.extend(true, {}, links.recent, links.glued);
+                links.home = $.extend(true, {}, links.timeline, links.home);
+                links.replies = $.extend(true, {}, links.timeline, links.replies);
+                links.mentions = $.extend(true, {}, links.timeline, links.mentions);
+                links.tags = $.extend(true, {}, links.timeline, links.tags);
+                links.domains = $.extend(true, {}, links.timeline, links.domains);
+                links.glued = $.extend(true, {}, links.timeline, links.glued);
+                links.public = $.extend(true, {}, links.timeline, links.public);
                 $("#links").evently(links, app);
                 $("#scopes").evently("scopes", app); 
                 $("#cloudcontrol").evently("cloudcontrol", app);
                 $("#sidebar").tabs({ fx : { opacity: 'toggle' }, duration : 'fast'});
                 $("#tabs-1").evently("tagcloud", app);
                 $("#tabs-2").evently("domaincloud", app);
-                $.evently.connect("#profile","#scopes", ["profileReady","loggedOut"]);
+                $.evently.connect("#profile","#scopes", ["loggedOut","loggedIn"]);
+                // Add a 'public' evently for loggedin/loggedout state to handle this
+                $.evently.connect("#links","#profile", ["timeline","glued"]);
+                $.evently.connect("#links","#account", ["loggedOut"]);
                 $.pathbinder.begin("/");
               }
             });

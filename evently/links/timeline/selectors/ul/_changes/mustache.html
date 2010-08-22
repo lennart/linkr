@@ -1,0 +1,71 @@
+<li class="link" data-id="{{{_id}}}">
+  <a href="{{{url}}}" target="_blank" class="url">
+    {{#image}}
+    <img src="{{{url}}}" />
+    {{/image}}
+    {{^image}}
+    {{{url}}}
+    {{/image}}
+  </a>
+<div class="message">
+  {{message}}
+</div>
+<!--  <ul class="rating" style="display:none;">
+    {{#ratings}}
+    <li>
+    {{rating}} by {{name}} on {{date}}
+    </li>
+    {{/ratings}}
+  </ul>-->
+<div class="meta">
+  <div class="time">
+    <time datetime="{{{created_at}}}">{{{created_at}}}</time>
+  </div>
+  <span class="user">
+    <span class="author" data-id="{{profile_name}}">
+      {{#gravatar_url}}<img src="{{{gravatar_url}}}">{{/gravatar_url}}
+      {{name}}
+    </span>
+    <span class="clear">&nbsp;</span>
+  </span>
+  <ol>
+    {{#author}}
+    <li>
+    <a href="#/delete/{{{_id}}}/{{{_rev}}}" title="Delete"><img src="images/delete.png"></a>
+    </li>
+    <li>
+    <a href="#" data-id="{{{_id}}}" name="togglePublic">
+      <img src="images/{{togglePublic}}.png">
+    </a>
+    </li>
+    {{/author}}
+    <!--{{#unseen}}
+    <li>
+    <a href="#" data-id="{{{_id}}}" name="markRead">
+      Mark as read
+    </a>
+    </li>
+    {{/unseen}}-->
+    <!--<li>
+    <a href="#/push/{{{_id}}}" title="Vote Up"><img src="images/voteup.png"></a>
+    </li>
+    <li>
+    <a href="#/pull/{{{_id}}}" title="Vote Down"><img src="images/votedown.png"></a>
+    </li>
+    <li>-->
+    {{^gluedTo}}
+    {{^glueCount}}
+    <a href="#/glued/{{{_id}}}"><img src="images/replies.png"></a>
+    {{/glueCount}}
+    {{#glueCount}}
+    <a href="#/glued/{{{_id}}}" class="gluelink"><span class="gluecount">{{glueCount}}</span><img src="images/replies.png"></a>
+    {{/glueCount}}
+    {{/gluedTo}}
+    </li>
+  </ol>
+  <!--<span class="rating">
+    {{rating}}
+  </span>-->
+</div>
+<div class="clear"></div>
+</li>
