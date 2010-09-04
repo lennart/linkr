@@ -82,6 +82,7 @@
                 // Add a 'public' evently for loggedin/loggedout state to handle this
                 $.evently.connect("#links","#profile", ["timeline","glued"]);
                 $.evently.connect("#links","#account", ["loggedOut"]);
+               // $.evently.connect("#account","#profile", ["noProfile"]);
                 $.pathbinder.begin("/");
               }
             });

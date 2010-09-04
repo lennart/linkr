@@ -102,6 +102,10 @@ time {
   -webkit-border-bottom-left-radius: 15px;
 }
 
+#profile ul li input {
+  width: 250px;
+}
+
 #domaincloud, #tagcloud {
   text-align: justify;
   text-justify: newspaper;

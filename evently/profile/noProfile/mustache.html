@@ -1,0 +1,20 @@
+<form>
+  <p>Hello {{name}}, Please setup your user profile.</p>
+  {{#profile}}
+  <ul>
+    <li>
+      <label for="nickname">Nickname</label>
+      <input type="text" name="nickname" value="{{nickname}}">
+    </li>
+    <li>
+      <label for="email">Email (<em>for <a href="http://gravatar.com">Gravatar</a></em>)</label>
+      <input type="text" name="email" value="{{email}}"></li>
+    <li>
+      <label for="url">URL </label>
+      <input type="text" name="url" value="{{url}}">
+    </li>
+  </ul>
+  <input type="submit" value="Go &rarr;">
+  {{/profile}}
+  <input type="hidden" name="userCtxName" value="{{name}}" id="userCtxName">
+</form>
