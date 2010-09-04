@@ -15,13 +15,10 @@ function(e,p) {
         }
         app.db.saveDoc(doc, {
             success: function(resp) {
-              console.log("Yay, voted up");
-              console.log(doc);
             }
           });
       }
       else {
-        console.log("Already up voted");
       }
     }});
   return true;

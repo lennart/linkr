@@ -1,6 +1,5 @@
 function(e,p) {
   var app = $$(this).app;
-  console.log("Marking all as read");
   var name = "org.couchdb.user:"+$$("#profile").profile.name;
   $.couch.userDb(function(db) {
       db.openDoc(name, {

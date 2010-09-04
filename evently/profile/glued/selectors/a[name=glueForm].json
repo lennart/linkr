@@ -1,3 +1,2 @@
 {
-  "click" : "function(e,p) { console.log(e);  var shareBox = $(document.createElement(\"div\"));  shareBox.attr(\"id\", \"shareBox\");  shareBox.attr(\"data-id\", e.data.args[2].id);  shareBox.evently(\"share\",$$(this).app); shareBox.trigger(\"glueForm\",[e.data.args[2].id]);  shareBox.dialog({resizable: false, width: \"600px\", modal: true});}"
 }

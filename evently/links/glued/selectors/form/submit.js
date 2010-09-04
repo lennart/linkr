@@ -15,17 +15,14 @@ function() {
     };
     app.db.saveDoc(doc, {
       success : function(resp) {
-        console.log("Saved Reply");
         app.db.openDoc(gluedTo, {
             success: function(glueDoc) {
-              console.log("Opened Glue Doc");
               if(!glueDoc.glueCount) {
                 glueDoc.glueCount = 0;
               }
               glueDoc.glueCount = glueDoc.glueCount + 1;
               app.db.saveDoc(glueDoc, {
                 success : function(glueResp) {
-                  console.log("Saved Glue Doc");
                   $("[name=url]", form).val("");
                   $("[name=message]", form).val("");
                 }
