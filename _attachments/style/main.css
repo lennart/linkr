@@ -8,7 +8,9 @@ html {
 }
 
 body {
-  font:1em Helvetica, sans-serif;
+  font-size: 1em;
+  font-family: "m-1c-1","m-1c-2", sans-serif;
+  font-weight: thin;
   padding:4px;
 }
 
@@ -17,8 +19,8 @@ body {
   color: white;
 }
 a {
-  font-family: "Lucida Grande", sans-serif;
-  font-weight: bold;
+  font-family: "m-1c-1","m-1c-2", "Lucida Grande", sans-serif;
+  font-weight: thin;
   color: #55f !important;
   text-decoration: none;
 }
@@ -32,13 +34,13 @@ h1 {
 }
 
 h1 {
-  font-family: Georgia;
+  font-family: "adobe-garamond-pro-1", "adobe-garamond-pro-2", Georgia;
 }
 
 input[type=text], input[type=password] {
   background-color: white;
   border: 0px solid transparent;
-  font-family: "Lucida Grande", sans-serif;
+  font-family: "m-1c-1","m-1c-2", "Lucida Grande", sans-serif;
   font-size: 1.1em;
   padding: 0.5em;
   margin-top: 0.25em;
@@ -156,7 +158,7 @@ form {
 }
 
 form label {
-  font-family: "Lucida Grande", sans-serif;
+  font-family: "m-1c-1","m-1c-2","Lucida Grande", sans-serif;
   font-weight: bold;
   width: 140px;
   display: inline-block;
@@ -339,7 +341,7 @@ div.avatar img {
 }
 
 .message {
-  font-family: Georgia, serif;
+  font-family: "adobe-garamond-pro-1", "adobe-garamond-pro-2", Georgia, serif;
   padding: 1.5em;
   position: absolute;
   right: -2px;
