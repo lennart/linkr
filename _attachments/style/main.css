@@ -387,3 +387,9 @@ a[name=urlForm], a[name=glueForm] {
 .links.glued .link .message {
   background-color: #f7f7f7;
 }
+
+.error {
+  background-color: #900000;
+  padding: 0.5em;
+  color: #fefe99;
+}

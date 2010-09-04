@@ -12,9 +12,9 @@ function(newDoc, savedDoc, userCtx, secObj) {
     enforce(newDoc.name == userCtx.name,
       "You may only update documents with author " + userCtx.name);
   }*/
-  if (v.id == "") {
+ /* if (v.id == "") {
     return false;
-  }
+  }*/
 
  v.unchanged("name");
  // v.unchanged("created_at");
