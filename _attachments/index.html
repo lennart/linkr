@@ -1,8 +1,38 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<!doctype html>  
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
     <title>linkr</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+  <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+  <!-- CSS : implied media="all" -->
+  <link rel="stylesheet" href="style/style.css?v=1">
+
+  <!-- Uncomment if you are specifically targeting less enabled mobile browsers
+  <link rel="stylesheet" media="handheld" href="style/handheld.css?v=1">  -->
+
+ 
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/modernizr-1.5.min.js"></script>
     <link rel="stylesheet" href="style/main.css" type="text/css">
     <link rel="stylesheet" href="style/jquery-ui-1.8.4.custom.css" type="text/css">
     <link rel="alternate" type="application/atom+xml" 
@@ -11,9 +41,24 @@
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
           
 
-  </head>
-  <body>
+</head>
+
+<body>
+
+  <div id="container">
+    <header>
+
+    </header>
+    
     <div id="main">
+
+    </div>
+    
+    <footer>
+
+    </footer>
+  </div> <!--! end of #container -->
+   <div id="main">
       <div id="header">
         <div id="account"></div>
 
@@ -35,12 +80,36 @@
       </div>
       <div id="footer"></div>
     </div>
-  </body>
+
+
+  <!-- Javascript at the bottom for fast page loading -->
+
+
+
+  <!--[if lt IE 7 ]>
+    <script src="script/dd_belatedpng.js?"></script>
+    <script>
+      DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images
+    </script>
+  <![endif]-->
+
+
+  
   <script src="vendor/couchapp/loader.js"></script>
   <script type="text/javascript" charset="utf-8">
     couchapp_load([
-        "vendor/couchapp/jquery.pathbinder.js",
-        "script/jquery-ui-1.8.4.custom.min.js"
+      "/_utils/script/sha1.js",
+      "/_utils/script/json2.js",
+      "script/jquery-1.4.2.min.js",
+      "script/plugins.js?v=1",
+      "script/script.js?v=1",
+      "/_utils/script/jquery.couch.js",
+      "vendor/couchapp/jquery.couch.app.js",
+      "vendor/couchapp/jquery.couch.app.util.js",
+      "vendor/couchapp/jquery.mustache.js",
+      "vendor/couchapp/jquery.evently.js"
+      "vendor/couchapp/jquery.pathbinder.js",
+      "script/jquery-ui-1.8.4.custom.min.js"
     ]);
     $.couch.app(function(app) {
         $$("#users").profiles = {};
@@ -93,4 +162,5 @@
 
         },{design: "linkr", db: "ocean"});
 </script>
-    </html>
+</body>
+</html>
