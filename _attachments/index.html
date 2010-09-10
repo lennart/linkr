@@ -45,21 +45,8 @@
 
 <body>
 
-  <div id="container">
-    <header>
-
-    </header>
-    
-    <div id="main">
-
-    </div>
-    
-    <footer>
-
-    </footer>
-  </div> <!--! end of #container -->
    <div id="main">
-      <div id="header">
+      <header>
         <div id="account"></div>
 
         <h1>help, we need a <em>linkr!</em><sup class="note">(and a designer too…)</sup></h1>
@@ -69,7 +56,8 @@
         <div id="users"></div>
         
         <div id="profile"></div>
-      </div>
+        <div id="share"></div>
+      </header>
       <div id="contentwrapper">
         <div id="sidebar">
           <div id="cloudcontrol"></div>
@@ -152,10 +140,13 @@
                 $("#sidebar").tabs({ fx : { opacity: 'toggle' }, duration : 'fast'});
                 $("#tabs-1").evently("tagcloud", app);
                 $("#tabs-2").evently("domaincloud", app);
+                $("#share").evently("share", app);
                 $.evently.connect("#profile","#scopes", ["loggedOut","loggedIn"]);
                 // Add a 'public' evently for loggedin/loggedout state to handle this
                 $.evently.connect("#links","#profile", ["timeline","glued"]);
                 $.evently.connect("#links","#account", ["loggedOut"]);
+                $.evently.connect("#links","#share", ["glued", "timeline"]);
+                $.evently.connect("#profile","#share", ["dialog"]);
                // $.evently.connect("#account","#profile", ["noProfile"]);
                 $.pathbinder.begin("/");
               }

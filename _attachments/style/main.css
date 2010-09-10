@@ -2,6 +2,9 @@
 html {
   font-size: 13px;
 }
+h1 {
+  font-size: 2.5em;
+}
 
 .tab {
   background: none !important;
@@ -20,7 +23,7 @@ body {
 }
 a {
   font-family: "m-1c-1","m-1c-2", "Lucida Grande", sans-serif;
-  font-weight: thin;
+  font-weight: bolder;
   color: #55f !important;
   text-decoration: none;
 }
@@ -63,7 +66,7 @@ time {
   font-size: 0.8em;
 }
 
-#header {
+header {
   width: 90%;
   position: relative;
   left: 5%;
@@ -251,6 +254,7 @@ div.avatar img {
 #links .link a.url {
   font-size: 6em;
   text-decoration: none;
+  font-weight: lighter;
   position: absolute;
   left: -150px;
   top: 25px;

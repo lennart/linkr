@@ -34,7 +34,7 @@
     <a href="#/delete/{{{_id}}}/{{{_rev}}}" title="Delete"><img src="images/delete.png"></a>
     </li>
     <li>
-    <a href="#" data-id="{{{_id}}}" name="togglePublic">
+    <a href="#" data-id="{{{_id}}}" title="Toggle Public" name="togglePublic">
       <img src="images/{{togglePublic}}.png">
     </a>
     </li>
@@ -55,10 +55,10 @@
     <li>-->
     {{^gluedTo}}
     {{^glueCount}}
-    <a href="#/glued/{{{_id}}}"><img src="images/replies.png"></a>
+    <a href="#/glued/{{{_id}}}" title="There's nothing glued to this link, yet"><img src="images/replies.png"></a>
     {{/glueCount}}
     {{#glueCount}}
-    <a href="#/glued/{{{_id}}}" class="gluelink"><span class="gluecount">{{glueCount}}</span><img src="images/replies.png"></a>
+    <a href="#/glued/{{{_id}}}" title="Stuff that's glued to this link" class="gluelink"><span class="gluecount">{{glueCount}}</span><img src="images/replies.png"></a>
     {{/glueCount}}
     {{/gluedTo}}
     </li>

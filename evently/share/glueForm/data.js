@@ -1,3 +1,3 @@
-function(e, id) {
-  return { gluedTo : id };
+function(e, args) {
+  return { gluedTo : args.id };
 }
