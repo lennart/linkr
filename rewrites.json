@@ -35,10 +35,10 @@
   "to" : "_list/home/private-links"
 },
 {
-  "from" : "*",
-  "to" : "../../../:*"
+  "from" : "search/:query",
+  "to" : "#/search/:query"
 },
 {
-  "from" : "/search/:query",
-  "to" : "#/search/:query"
+  "from" : "*",
+  "to" : "../../../:*"
 }]
