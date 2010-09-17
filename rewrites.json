@@ -39,6 +39,6 @@
   "to" : "../../../:*"
 },
 {
-  "from" : "search/:query",
+  "from" : "/search/:query",
   "to" : "#/search/:query"
 }]
