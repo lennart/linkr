@@ -134,6 +134,7 @@
                 links.domains = $.extend(true, {}, links.timeline, links.domains);
                 links.glued = $.extend(true, {}, links.timeline, links.glued);
                 links.public = $.extend(true, {}, links.timeline, links.public);
+                links.search = $.extend(true, {}, links.timeline, links.search);
                 $("#links").evently(links, app);
                 $("#scopes").evently("scopes", app); 
                 $("#cloudcontrol").evently("cloudcontrol", app);
@@ -148,7 +149,7 @@
                 $.evently.connect("#links","#share", ["glued", "timeline"]);
                 $.evently.connect("#profile","#share", ["dialog"]);
                // $.evently.connect("#account","#profile", ["noProfile"]);
-                $.pathbinder.begin("/");
+                $.pathbinder.begin($.pathbinder.currentPath());
               }
             });
         });
